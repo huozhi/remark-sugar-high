@@ -1,6 +1,5 @@
 import { 
   tokenize, 
-  // @ts-expect-error expose generate in sugar-high
   generate
 } from 'sugar-high'
 import { map as unistMap } from 'unist-util-map'
@@ -41,7 +40,7 @@ const h = (type, attrs, children) => {
   }
 }
 
-export const highlightCode = () => (tree) => {
+export const highlight = () => (tree) => {
   return unistMap(tree, (node) => {
     const { type, tagName } = node
     if (tagName !== 'code' && type !== 'code') return node
