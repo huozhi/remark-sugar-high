@@ -4,8 +4,12 @@
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "bunchee"
+    "build": "bunchee",
+    "prepublishOnly": "pnpm build"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [],
   "author": "huozhi",
   "license": "MIT",
