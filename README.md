@@ -19,10 +19,10 @@ console.log('Hello World');
 \`\`\`
 ```
 
-Using [remark](https://github.com/remarkjs/remark) (mdast):
+Using [remark](https://github.com/remarkjs/remark):
 
 ```js
-require('unified')()
+await remark()
   .use(require('remark-sugar-high'))
   .use(require('remark-html'))
   .process(file, (err, file) => console.log(String(file)));
@@ -66,6 +66,24 @@ Output
   </code>
 </pre>;
 ```
+
+Customize the color theme with sugar-high CSS variables, e.g.:
+
+```css
+:root {
+  --sh-identifier: #354150;
+  --sh-keyword: #f47067;
+  --sh-string: #00a99a;
+  --sh-class: #8d85ff;
+  --sh-property: #4e8fdf;
+  --sh-entity: #6eafad;
+  --sh-jsxliterals: #bf7db6;
+  --sh-sign: #8996a3;
+  --sh-comment: #a19595;
+}
+```
+
+Check [sugar-high highlight-with-css section](https://github.com/huozhi/sugar-high#highlight-with-css) for more details.
 
 
 ## License
