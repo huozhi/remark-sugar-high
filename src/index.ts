@@ -40,7 +40,7 @@ const h = (type, attrs, children) => {
   }
 }
 
-export const highlight = () => (tree) => {
+const highlight = () => (tree) => {
   return unistMap(tree, (node) => {
     const { type, tagName } = node
     if (tagName !== 'code' && type !== 'code') return node
@@ -80,3 +80,6 @@ export const highlight = () => (tree) => {
     return pre
   })
 }
+
+export { highlight }
+export default highlight
