@@ -1,6 +1,8 @@
 # remark-sugar-high
 
-Syntax highlighter for markdown code blocks using [Sugar High](https://sugar-high.vercel.app). This allows syntax highlighting without running any client-side code - other than CSS.
+Remark plugin for [Sugar High](https://sugar-high.vercel.app) syntax highlighter.
+
+[Website](https://remark-sugar-high.vercel.app/)
 
 
 ## Installation
@@ -22,8 +24,10 @@ console.log('Hello World');
 Using [remark](https://github.com/remarkjs/remark):
 
 ```js
+const { highlight } = require('remark-sugar-high');
+
 await remark()
-  .use(require('remark-sugar-high'))
+  .use(highlight)
   .use(require('remark-html'))
   .process(file, (err, file) => console.log(String(file)));
 ```
