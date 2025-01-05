@@ -1,9 +1,11 @@
 import { 
   tokenize, 
-  generate
+  generate,
+  type HighlightOptions,
 } from 'sugar-high'
 import { map as unistMap } from 'unist-util-map'
 import rangeParser from 'parse-numeric-range'
+import * as languagesOptions from './lang'
 
 const parseLang = (str) => {
   const match = (regexp) => {
@@ -47,6 +49,12 @@ const highlight = () => (tree) => {
 
     const { lang } = parseLang(node.lang)
 
+    let options: HighlightOptions | undefined  = undefined
+
+    if (lang in languagesOptions) {
+      options = languagesOptions[lang]
+    }
+
     const codeText =
       node.value ||
       node.children
@@ -54,7 +62,7 @@ const highlight = () => (tree) => {
         .map(({ value }) => value)
         .pop()
 
-    const childrenLines = generate(tokenize(codeText))
+    const childrenLines = generate(tokenize(codeText, options))
     
     for (const line of childrenLines) {
       line.children.push(h('span', { className: 'sh__token--line' }, [{ type: 'text', value: '\n' }]))
