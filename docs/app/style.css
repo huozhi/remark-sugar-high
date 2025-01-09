@@ -88,17 +88,15 @@ a:hover {
 code {
   font-family: var(--font-geist-mono), menlo, 'Courier New', Courier, monospace;
   letter-spacing: 0;
-  background-color: #eee;
   padding: 0.2em 0.3em;
   border-radius: 3px;
   font-size: 0.95em;
-  color: #565656;
 }
 
 pre {
   display: inline-block;
-  background-color: #eee;
   padding: 0.3em 0.5em;
+  background-color: #f4f4f4;
   border-radius: 3px;
   width: 600px;
   max-width: 100%;
@@ -137,4 +135,20 @@ li {
   --sh-string: #00a99a;
   --sh-keyword: #f47067;
   --sh-comment: #a19595;
+}
+
+.code {
+  padding: 1rem 0;
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 600px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.code-filename {
+  color: #62826f;
+  padding: 4px 6px;
+  background-color: #d6ebe1;
+  margin: 0;
 }

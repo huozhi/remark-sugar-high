@@ -1,15 +1,8 @@
 import { renderMarkdown } from './markdown'
-
-const markdownContent = `\
-This is a python code block:
-
-\`\`\`python
-# Here is a simple function
-def hello():
-    print('Hello, world from Python!')
-    return 123 # return a number
-\`\`\`
-`
+import { code as jsCode } from './languages/javascript'
+import { code as cssCode} from './languages/css'
+import { code as htmlCode } from './languages/html'
+import { code as pythonCode } from './languages/python'
 
 const usageCode = `\
 import { remark } from 'remark'
@@ -35,23 +28,36 @@ export default async Preview({ markdown }) {
 }
 `
 
-export default async function Post() {
-  const html = await renderMarkdown(markdownContent)
+async function CodeExample(
+  { 
+    filename, 
+    code,
+    showCode = false
+  }: {
+    filename: string
+    code: string
+    showCode?: boolean
+  }
+) {
+  const html = await renderMarkdown(code)
   return (
-    <div>
-      <h2>Example</h2>
-      <h3>Markdown</h3>
-      <pre>
-        <code>{markdownContent}</code>
-      </pre>
-
-      <h3>Output</h3>
+    <div className='code'>
+      <p className='code-filename'>{filename}</p>
       <div dangerouslySetInnerHTML={{ __html: html }} />
+      {showCode &&
+        <pre>
+          <code>{code}</code>
+        </pre>
+      }
+    </div>
+  )
+}
 
 
-      <hr />
+export default async function Post() {
+  return (
+    <div>      
       <h2>Usage</h2>
-
       <h3>Install</h3>
       <pre>
         <code>
@@ -60,11 +66,22 @@ export default async function Post() {
       </pre>
 
       <h3>API</h3>
-      <pre>
+      {/* <pre>
         <code>
           {usageCode}
         </code>
-      </pre>
+      </pre> */}
+
+      <CodeExample filename='remark-plugin.js' code={
+        '```\n' + usageCode + '\n```'
+      } />
+
+      <h2>Examples</h2>
+      
+      <CodeExample filename='script.js' code={jsCode} />
+      <CodeExample filename='print.py' code={pythonCode} />
+      <CodeExample filename='styles.css' code={cssCode} />
+      <CodeExample filename='index.html' code={htmlCode} />
     </div>
   )
 }

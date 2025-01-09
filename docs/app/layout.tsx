@@ -5,6 +5,7 @@ import './style.css'
 
 export const metadata = {
   title: 'Remark Sugar High',
+  description: 'A remark plugin for sugar-high syntax highlighters',
 }
 
 export default function RootLayout({ children }) {
