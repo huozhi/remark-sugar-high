@@ -95,9 +95,9 @@ code {
 
 pre {
   display: inline-block;
-  padding: 0.3em 0.5em;
   background-color: #f4f4f4;
   border-radius: 3px;
+  padding: 0.3em 0;
   width: 600px;
   max-width: 100%;
   white-space: pre-wrap;
@@ -130,10 +130,10 @@ li {
   --sh-identifier: #354150;
   --sh-sign: #8996a3;
   --sh-property: #0550ae;
-  --sh-entity: #249a97;
+  --sh-entity: #9eb8d6;
   --sh-jsxliterals: #6266d1;
-  --sh-string: #00a99a;
-  --sh-keyword: #f47067;
+  --sh-string: #73747c;
+  --sh-keyword: #2876db;
   --sh-comment: #a19595;
 }
 
@@ -147,8 +147,16 @@ li {
   overflow-x: auto;
 }
 .code-filename {
-  color: #62826f;
+  color: #507a99;
   padding: 4px 6px;
-  background-color: #d6ebe1;
+  background-color: #d6e1eb;
   margin: 0;
+}
+
+.sh__line {
+  display: block;
+  padding: 0 0.5em;
+}
+.sh__line--highlighted {
+  background-color: #dff1ff;
 }
