@@ -1,5 +1,5 @@
 export const code = `\
-\`\`\`javascript
+\`\`\`javascript {2,5}
 // Here is a simple function
 async function hello() {
     console.log('Hello, world from JavaScript!')
