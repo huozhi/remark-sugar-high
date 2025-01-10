@@ -24,6 +24,7 @@ async function hello() {
 }
 
 await hello()
+\`\`\`
 ```
 
 Using [remark](https://github.com/remarkjs/remark):
