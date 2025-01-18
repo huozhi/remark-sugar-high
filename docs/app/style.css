@@ -12,6 +12,7 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  width: 600px;
 }
 
 img,
@@ -70,7 +71,6 @@ h2 {
 p,
 pre {
   margin-bottom: 0.75rem;
-  width: 600px;
   max-width: 100%;
 }
 
@@ -88,8 +88,6 @@ a:hover {
 code {
   font-family: var(--font-geist-mono), menlo, 'Courier New', Courier, monospace;
   letter-spacing: 0;
-  padding: 0.2em 0.3em;
-  border-radius: 3px;
   font-size: 0.95em;
 }
 
@@ -98,7 +96,6 @@ pre {
   background-color: #f4f4f4;
   border-radius: 3px;
   padding: 0.3em 0;
-  width: 600px;
   max-width: 100%;
   white-space: pre-wrap;
 }
@@ -113,7 +110,6 @@ footer {
   margin-top: 2rem;
   padding-top: 1rem;
   border-top: 1px solid #ddd;
-  width: 600px;
   max-width: 100%;
 }
 
@@ -138,21 +134,25 @@ li {
 }
 
 .code {
-  padding: 1rem 0;
-  border-radius: 5px;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  width: 600px;
-  max-width: 100%;
-  overflow-x: auto;
+  width: 100%;
 }
-.code-filename {
-  color: #507a99;
-  padding: 4px 6px;
+/* TODO: improve codice overriding */
+[data-codice-editor-header] {
   background-color: #d6e1eb;
+  padding: 4px 6px !important;
+  color: #507a99;
   margin: 0;
 }
-
+/* TODO: optional pre code, when passed code contains pre code */
+[data-codice-code] pre,
+[data-codice-code] code {
+  width: 100%;
+}
+[data-codice-code] pre {
+  padding: 8px 0 !important;
+}
 .sh__line {
   display: block;
   padding: 0 0.5em;

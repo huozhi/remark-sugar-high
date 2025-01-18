@@ -3,6 +3,7 @@ import { code as jsCode } from './languages/javascript'
 import { code as cssCode } from './languages/css'
 import { code as htmlCode } from './languages/html'
 import { code as pythonCode } from './languages/python'
+import { Code } from 'codice'
 
 const usageCode = `\
 \`\`\`javascript {2,9}
@@ -33,23 +34,15 @@ export default async Preview({ markdown }) {
 async function CodeExample({
   filename,
   code,
-  showCode = false,
 }: {
   filename: string
   code: string
-  showCode?: boolean
 }) {
   const html = await renderMarkdown(code)
   return (
-    <div className="code">
-      <p className="code-filename">{filename}</p>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
-      {showCode && (
-        <pre>
-          <code>{code}</code>
-        </pre>
-      )}
-    </div>
+    <Code className="code" filename={filename}>
+      {html}
+    </Code>
   )
 }
 
