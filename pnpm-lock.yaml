@@ -51,15 +51,12 @@ importers:
       remark-html:
         specifier: ^16.0.1
         version: 16.0.1
+      remark-sugar-high:
+        specifier: link:../
+        version: link:..
       typescript:
         specifier: ^5.7.2
         version: 5.7.2
-
-  docs:
-    dependencies:
-      remark-sugar-high:
-        specifier: workspace:*
-        version: link:..
 
 packages:
 
