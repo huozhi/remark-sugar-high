@@ -138,20 +138,19 @@ li {
   margin-bottom: 1rem;
   width: 100%;
 }
-/* TODO: improve codice overriding */
-[data-codice-editor-header] {
+div[data-codice-editor-header="true"] {
   background-color: #d6e1eb;
-  padding: 4px 6px !important;
+  padding: 4px 6px;
   color: #507a99;
   margin: 0;
 }
-/* TODO: optional pre code, when passed code contains pre code */
+/* Override */
 [data-codice-code] pre,
 [data-codice-code] code {
   width: 100%;
 }
-[data-codice-code] pre {
-  padding: 8px 0 !important;
+.code[data-codice-code="true"] pre {
+  padding: 8px 0;
 }
 .sh__line {
   display: block;
