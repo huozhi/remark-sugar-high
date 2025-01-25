@@ -28,8 +28,8 @@ importers:
         specifier: ^6.3.1
         version: 6.3.2(typescript@5.7.2)
       codice:
-        specifier: ^0.3.0
-        version: 0.3.0(react@19.0.0)
+        specifier: 1.0.0-beta.2
+        version: 1.0.0-beta.2(react@19.0.0)
       geist:
         specifier: ^1.3.1
         version: 1.3.1(next@15.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
@@ -573,8 +573,8 @@ packages:
     resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
     engines: {node: '>=12'}
 
-  codice@0.3.0:
-    resolution: {integrity: sha512-wQVae2DJHpbHr1Ibwoev8JxKEqNgW9xlpQ99NpEBx6JI+kQknAvu3LcpiwzsMTX/jegHnSHWioy/SMRucC0Mkg==}
+  codice@1.0.0-beta.2:
+    resolution: {integrity: sha512-2nfSlkpa1usAWCfJoz72fZ873Ct41BEdfcGazbq3/XR6SwcJ9SDl4IDZ2PV9wGnyfoaEK1wmVxiHjn/2VaG03g==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -1115,6 +1115,9 @@ packages:
   sugar-high@0.8.1:
     resolution: {integrity: sha512-PqdbMRoo1Q415DA6H0IQA2PunW8dKjoWQUceWylI9WaGkOZumN8+7JSui3xQUvGB8vWyjsY+VFyd2gFBofJYUw==}
 
+  sugar-high@0.8.3:
+    resolution: {integrity: sha512-RwewMVg92h7Ezjnhh5lADcimwDjeaWrXwfEdoz1WlKCzHTuz35SDatMOeJ4X7HUmFUd7PI49TXAcnU4KDoX+8Q==}
+
   supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
@@ -1589,9 +1592,10 @@ snapshots:
       strip-ansi: 6.0.1
       wrap-ansi: 7.0.0
 
-  codice@0.3.0(react@19.0.0):
+  codice@1.0.0-beta.2(react@19.0.0):
     dependencies:
       react: 19.0.0
+      sugar-high: 0.8.3
 
   color-convert@2.0.1:
     dependencies:
@@ -2345,6 +2349,8 @@ snapshots:
       react: 19.0.0
 
   sugar-high@0.8.1: {}
+
+  sugar-high@0.8.3: {}
 
   supports-preserve-symlinks-flag@1.0.0: {}
 

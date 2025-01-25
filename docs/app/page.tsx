@@ -40,7 +40,7 @@ async function CodeExample({
 }) {
   const html = await renderMarkdown(code)
   return (
-    <Code className="code" filename={filename}>
+    <Code className="code" title={filename} preformatted={false} asMarkup>
       {html}
     </Code>
   )

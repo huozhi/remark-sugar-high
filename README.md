@@ -58,23 +58,7 @@ await remark()
 
 </details>
 
-Customize the color theme with sugar-high CSS variables, e.g.:
-
-```css
-:root {
-  --sh-class: #2d5e9d;
-  --sh-identifier: #354150;
-  --sh-sign: #8996a3;
-  --sh-property: #0550ae;
-  --sh-entity: #9eb8d6;
-  --sh-jsxliterals: #6266d1;
-  --sh-string: #73747c;
-  --sh-keyword: #2876db;
-  --sh-comment: #a19595;
-}
-```
-
-Check [sugar-high highlight-with-css section](https://github.com/huozhi/sugar-high#highlight-with-css) for more details.
+Customize the color theme with sugar-high CSS variables. Check [sugar-high highlight-with-css section](https://github.com/huozhi/sugar-high#highlight-with-css) for more details.
 
 
 ## License
