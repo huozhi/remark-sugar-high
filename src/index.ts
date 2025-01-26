@@ -76,6 +76,16 @@ const highlight = () => (tree) => {
     const { lang } = parseLang(node.lang)
 
     const highlightRanges = parseHighlightMeta(node.meta)
+    const highlightLineNumbers = new Set<number>()
+    highlightRanges.forEach((range) => {
+      if (Array.isArray(range)) {
+        for (let i = range[0]; i <= range[1]; i++) {
+          highlightLineNumbers.add(i)
+        }
+      } else {
+        highlightLineNumbers.add(range)
+      }
+    })
 
     let options: HighlightOptions | undefined = undefined
 
@@ -93,14 +103,28 @@ const highlight = () => (tree) => {
     const childrenLines = generate(tokenize(codeText, options))
 
     let lineIndex = 1
-    for (const line of childrenLines) {
+    for (let i = 0; i < childrenLines.length; i++) {
+      const line = childrenLines[i]
       // if it's highlighted lines, add a classname `sh__line--highlighted`
-      let isCurrentLineHighlighted = highlightRanges.includes(lineIndex)
-      
-
       let highLightClassName = ''
+      let isCurrentLineHighlighted = highlightLineNumbers.has(lineIndex)
+
       if (isCurrentLineHighlighted) {
         highLightClassName = 'sh__line--highlighted'
+      }
+      
+      for (let j = 0; j < line.children.length; j++) {
+        const token = line.children[j]
+        // normalize token's style object to string
+        if (token.properties && typeof token.properties.style === 'object') {
+          let styleString = ''
+          for (const [key, value] of Object.entries(token.properties.style)) {
+            styleString += `${key}:${value};`
+          }
+          if (styleString) {
+            token.properties.style = styleString
+          }
+        }
       }
 
       // add line break
