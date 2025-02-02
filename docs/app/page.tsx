@@ -3,6 +3,7 @@ import { code as jsCode } from './languages/javascript'
 import { code as cssCode } from './languages/css'
 import { code as htmlCode } from './languages/html'
 import { code as pythonCode } from './languages/python'
+import { code as rustCode } from './languages/rust'
 import { Code } from 'codice'
 
 const usageCode = `\
@@ -71,6 +72,7 @@ export default async function Post() {
       <h2>Examples</h2>
 
       <CodeExample filename="script.js" code={jsCode} />
+      <CodeExample filename="mod.rs" code={rustCode} />
       <CodeExample filename="print.py" code={pythonCode} />
       <CodeExample filename="styles.css" code={cssCode} />
       <CodeExample filename="index.html" code={htmlCode} />

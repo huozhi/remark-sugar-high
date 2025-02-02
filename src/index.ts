@@ -1,7 +1,7 @@
 import { tokenize, generate, type HighlightOptions } from 'sugar-high'
+import * as languagePresets from 'sugar-high/presets'
 import { map as unistMap } from 'unist-util-map'
 import rangeParser from 'parse-numeric-range'
-import * as languagesOptions from './lang'
 
 function cx(...args: any[]): string {
   return args.filter(Boolean).join(' ')
@@ -89,8 +89,8 @@ const highlight = () => (tree) => {
 
     let options: HighlightOptions | undefined = undefined
 
-    if (lang in languagesOptions) {
-      options = languagesOptions[lang]
+    if (lang in languagePresets) {
+      options = languagePresets[lang]
     }
 
     const codeText =
